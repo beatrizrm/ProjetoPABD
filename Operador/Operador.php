@@ -1,5 +1,5 @@
 ﻿<?php
-
+include 'ConexaoBD.php';
 class Operador {
     private $idOperador;
     private $noOperador;

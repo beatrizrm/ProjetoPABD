@@ -1,6 +1,6 @@
 ﻿<?php
 
-
+include 'ConexaoBD.php';
 class Nacionalidade {
     private $idnacionalidade;
     private $nonacionalidade;

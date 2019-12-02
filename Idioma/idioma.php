@@ -1,5 +1,5 @@
 <?php
-  
+  include 'ConexaoBD.php';
 class idioma {
     private $ididioma;
     private $noidioma;
