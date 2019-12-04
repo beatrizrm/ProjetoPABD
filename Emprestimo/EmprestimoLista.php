@@ -32,8 +32,9 @@ and open the template in the editor.
                 <tr>
                     <th>Código</th>
                     <th>Aluno</th>
-                    <th>Operador</th>
                     <th>Data Prevista Devolução</th>
+
+                    <th>Operador</th>
                     <th colspan="2">Ação</th>
                 </tr>
             </thead>
@@ -48,7 +49,7 @@ and open the template in the editor.
                 
                 <td class="form-group submit"><?php echo $lst_empre->getIdemprestimo(); ?></td>
                 <td class="form-group submit"><?php echo $lst_empre->getNuMatricula(); ?></td>
-                    <td class="form-group submit"><?php echo $lst_empre->getDaPrevisaoDevolucao();?></td>
+                <td class="form-group submit"><?php echo $lst_empre->getDaPrevisaoDevolucao();?></td>
                     <td class="form-group submit"><?php echo $lst_empre->getNooperador();?></td>
                     <td>
                         <a href="EmprestimoAltera.php?editar=<?php echo $lst_empre->getIdemprestimo(); ?>" class="form-submit submmit">Alterar</a>

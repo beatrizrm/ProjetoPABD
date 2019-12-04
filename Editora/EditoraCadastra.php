@@ -4,10 +4,20 @@
 <head>
     <title>Cadastro de Editora</title>
     <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script>
+    function validarFormulario(){
+        var codigo = document.forms["form"]["codigo"].value;
+        var nome = document.forms["form"]["nome"].value;
+        if(codigo =="" | nome ==""){
+            alert("Campo Vazio");
+            return false;
+        }
+    }
+    </script>
 </head>
 <body>
     <h1 align="center">Cadastro de Editora</h1>
-    <form method="post" action="EditoraCadastra.php" >
+    <form method="post" action="EditoraCadastra.php" name="form" action="/action_page.php" onsubmit="validarFormulario()" >
         <div class="input-group">
             <label>Código:</label>
             <input type="text" name="codigo" value="">

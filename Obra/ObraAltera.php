@@ -3,7 +3,18 @@
 <html>
 <head>
     <title>Altera Obra</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <link rel="stylesheet" type="text/css" href="estilo.css
+          <script>
+    function validarFormulario(){
+        var nome = document.forms["form"]["nome"].value;
+        if(nome == ""){
+            alert("Campo vazio");
+            return false;
+        }
+    }
+    
+    
+    </script>
 </head>
 <body>
     <?php
@@ -12,9 +23,7 @@
             
             $c = new Obra();
             $obra = $c->consulta($id); 
-            foreach($obra as $lst_obra) {
-                $nome = $lst_obra->getNoobra();
-            } 
+            
         }
     ?>    
     <h1 align="center">Alteração de Obras</h1>    
@@ -24,7 +33,7 @@
         </div>
         <div class="input-group">
             <label>Nome:</label>
-            <input type="text" name="nome" value="<?php echo $nome; ?>">
+            <input type="text" name="nome" value="">
         </div>
         <div class="input-group">
             <button class="btn" type="submit" name="alterar" style="background: #556B2F;" >Alterar</button>

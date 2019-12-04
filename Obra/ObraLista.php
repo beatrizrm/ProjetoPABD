@@ -29,10 +29,10 @@ and open the template in the editor.
                     <td><?php echo $lst_obra->getIdobra(); ?></td>
                     <td><?php echo $lst_obra->getNoobra() ?></td>
                     <td>
-                        <a href="obraAltera.php?editar=<?php echo $lst_obra->getIdobra(); ?>" class="edit_btn">Alterar</a>
+                        <a href="ObraAltera.php?editar=<?php echo $lst_obra->getIdobra(); ?>" class="edit_btn">Alterar</a>
                     </td>
                     <td>
-                        <a href="obraExclui.php?excluir=<?php echo $lst_obra->getIdobra(); ?>" 
+                        <a href="ObraExclui.php?excluir=<?php echo $lst_obra->getIdobra(); ?>" 
                            class="del_btn">Remover</a>
                     </td>
                 </tr>

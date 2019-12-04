@@ -4,6 +4,13 @@
 <head>
     <title>Altera Editora</title>
     <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script>
+    var nome = document.forms["form"]["nome"].value;
+    if(nome ==""){
+        alert("Campo vazio");
+        return false;
+    }
+    </script>
 </head>
 <body>
     <?php
@@ -18,7 +25,7 @@
         }
     ?>    
     <h1 align="center">Alteração Editora</h1>    
-    <form method="post" action="EditoraAltera.php" >
+    <form method="post" action="EditoraAltera.php" name="form" action="/action_page.php" onsubmit="validarFormulario()">
         <div class="input-group">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
         </div>

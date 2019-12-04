@@ -118,15 +118,19 @@ on b.idoperador = c.idoperador";
         }     
     }
  
-    public function insere($id, $idobra ){
+    public function insere($id, $daemprestimo, $daprevisaodevolucao, $idoperador, $numatricula ){
       try {
-        $sql = "INSERT INTO TbEmprestimoItem(IdEmprestimo, IdObra)
-                VALUES (?, ?)";
+        $sql = "INSERT INTO TbEmprestimoItem(IdEmprestimo, DaEmprestimo,
+            DaPrevisaoDevolucao, IdOperador, NuMatricula)
+                VALUES (?,?,?,?, ?)";
         $conn = ConexaoBD::conecta();
 
         $stm  = $conn->prepare($sql);              
         $stm->bindParam(1, $id);
-        $stm->bindParam(2, $idobra); 
+        $stm->bindParam(2, $daemprestimo); 
+        $stm->bindParam(4, $idoperador);
+        $stm->bindParam(3, $daprevisaodevolucao);
+        $stm->bindParam(5, $numatricula);
 	$stm->execute();
         return 1;
       } catch (Exception $e) {

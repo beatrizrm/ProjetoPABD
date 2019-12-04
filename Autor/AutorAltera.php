@@ -4,6 +4,15 @@
 <head>
     <title>Altera Autor</title>
     <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script>
+    function validarFormulario(){
+        var nome = document.forms["form"]["nome"].value;
+        if(nome == ""){
+            alert("Campo vazio");
+            return false;
+        }
+    }
+    </script>
 </head>
 <body>
     <?php
@@ -18,7 +27,7 @@
         }
     ?>    
     <h1 align="center">Alteração de Autor</h1>    
-    <form method="post" action="AutorAltera.php" >
+    <form method="post" action="AutorAltera.php" name="form" action="/action_page.php" onsubmit="return validarFormulario()">
         <div class="input-group">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
         </div>

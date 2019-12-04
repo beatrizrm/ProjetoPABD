@@ -3,18 +3,27 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
-    </head>
-    <body>
-       <?php  include('idioma.php'); ?>
-<html>
-<head>
-    <title>Cadastro de Idioma</title>
+        
+        <title>Cadastro de Idioma</title>
     <link rel="stylesheet" type="text/css" href="estilo.css">
-</head>
+    <script>
+    function validarFormulario(){
+        var codigo = document.forms["form"]["codigo"].value;
+        var nome = document.forms["form"]["nome"].value;
+        if( codigo =="" | nome ==""){
+            alert("Campo vazio");
+            return false;
+        }
+    }
+    </script>
+    </head>
+    
+       <?php  include('idioma.php'); ?>
+
+   
 <body>
     <h1 align="center">Cadastro de Idioma</h1>
-    <form method="post" action="idiomaCadastrar.php" >
+    <form method="post" action="idiomaCadastrar.php" name="form" action="/action_page.php" onsubmit="validarFormulario()">
         <div class="input-group">
             <label>Código:</label>
             <input type="text" name="codigo" value="">

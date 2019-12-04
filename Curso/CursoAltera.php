@@ -4,6 +4,16 @@
 <head>
     <title>Altera Curso</title>
     <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script>
+    function validarFormulario(){
+        var nome = document.forms["form"]["nome"].value;
+        if( nome ==""){
+            alert("campo vazio");
+            return false;
+        }
+    }
+    
+    </script>
 </head>
 <body>
     <?php
@@ -18,7 +28,7 @@
         }
     ?>    
     <h1 align="center">Alteração de Curso</h1>    
-    <form method="post" action="CursoAltera.php" >
+    <form method="post" action="CursoAltera.php"name="form" action="/action_page.php" onsubmit="return validarFormulario()" >
         <div class="input-group">
             <input type="hidden" name="id" value="<?php echo $id; ?>">
         </div>

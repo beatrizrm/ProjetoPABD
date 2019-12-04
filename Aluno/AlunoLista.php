@@ -19,7 +19,7 @@ and open the template in the editor.
                 <tr>
                     <th>Código</th>
                     <th>Nome</th>
-                    <th>Curso</th>
+                    
                     <th colspan="2">Ação</th>
                 </tr>
             </thead>

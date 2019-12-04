@@ -16,7 +16,7 @@ and open the template in the editor.
                 $id = $_GET['excluir'];
             
                 $a = new Aluno();
-                $resp = $a->exclui($codigo);
+                $resp = $a->exclui($id);
 
                 header('location:AlunoLista.php?exclusao='.$resp);
             }

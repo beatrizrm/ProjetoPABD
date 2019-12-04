@@ -2,15 +2,24 @@
 <?php  include('Obra.php'); ?>
 <html>
 <head>
-    <title>Cadastro de Obras</title>
+    <title>Cadastro de Obra</title>
     <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script>
+    function validarFormulario(){
+        var nome = document.forms["form"]["nome"].value;
+        if(nome ==""){
+            alert("Campo vazio");
+            return false;
+        }
+    }
+    </script>
 </head>
 <body>
-    <h1 align="center">Cadastro de Obras</h1>
-    <form method="post" action="ObraCadastra.php" >
+    <h1 align="center">Cadastro de Obra</h1>
+    <form method="post" action="ObraCadastra.php" name="form" action="/action_page.php" onsubmit="return validarFormulario()">
         <div class="input-group">
             <label>Código:</label>
-            <input type="text" name="codigo" value="">
+            <input type="number" name="codigo" value="">
         </div>
         <div class="input-group">
             <label>Nome:</label>
@@ -19,7 +28,8 @@
         <div class="input-group">
             <button class="btn" type="submit" name="cadastrar" >Cadastrar</button>
             <button class="btn" name="listar" type="button" 
-                    onclick="location.href='ObraLista.php'>
+                    onclick="location.href='ObraLista.php';">Listar
+            </button>
         </div>
     </form>
     <?php
@@ -27,10 +37,10 @@
             $codigo = $_POST['codigo'];
             $nome   = $_POST['nome'];
             
-            $c = new Obra();
-            $c->insere($codigo, $nome);
+            $o = new Obra();
+            $o->insere($codigo, $nome);
 
-             header('location: ObraLista.php');
+            header('location: ObraLista.php');
         }
     ?>
 </body>
